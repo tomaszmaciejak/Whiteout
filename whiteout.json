@@ -1,0 +1,11 @@
+{
+    "player_id1": {
+        "player_id": 1,
+        "exploration": "2025-04-04T21:38:02.285527",
+        "radar_flag_date": "20250404",
+        "radar_flag_part": 3
+    },
+    "player_id2": {
+        "player_id": 2
+    }
+}
