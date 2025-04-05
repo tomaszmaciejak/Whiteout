@@ -898,8 +898,8 @@ def pet_adventure():
                     while find_and_click((pet_adventure_start_exit_img,), "   pet adventure start exit", 0.7, False,
                                          20):
                         find_and_click((pet_adventure_start_exit_img,), "   pet adventure start exit", 0.7, False, 20)
-            while find_and_click((pet_adventure_exit_img,), "   pet adventure  exit", 0.7, False, 20):
-                find_and_click((pet_adventure_exit_img,), "   pet adventure  exit", 0.7, False, 20)
+            while find_and_click((pet_adventure_exit_img,), "   pet adventure  exit", 0.8, False, 20):
+                find_and_click((pet_adventure_exit_img,), "   pet adventure  exit", 0.8, False, 20)
 
 
 def start_of_day():
