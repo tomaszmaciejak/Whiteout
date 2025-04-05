@@ -737,7 +737,7 @@ def detect_player():
 def alliance_tech():
     print(f"{datetime.now()} Alliance tech")
     if not character_state[player_id].get("alliance_tech:next_attempt") is None:
-        if character_state[player_id].get("alliance_tech:next_attempt")<datetime.now():
+        if character_state[player_id].get("alliance_tech:next_attempt")>datetime.now():
             print("   skip")
             return #skip
         else:
@@ -809,7 +809,7 @@ def backpack():
 def tree_of_life():
     print(f"{datetime.now()} Tree of life")
     if not character_state[player_id].get("tree:next_attempt") is None:
-        if character_state[player_id].get("tree:next_attempt")<datetime.now():
+        if character_state[player_id].get("tree:next_attempt")>datetime.now():
             print("   skip")
             return #skip
         else:
@@ -835,7 +835,7 @@ def pet_adventure():
     print(f"{datetime.now()} Pet adventure")
 
     if not character_state[player_id].get("pets:next_attempt") is None:
-        if character_state[player_id].get("pets:next_attempt")<datetime.now():
+        if character_state[player_id].get("pets:next_attempt")>datetime.now():
             return #skip
         else:
             character_state[player_id].pop("pets:next_attempt")
