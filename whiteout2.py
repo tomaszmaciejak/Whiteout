@@ -111,24 +111,27 @@ def find_image(images, debug_name="", threshold=0.8, important=False, cnt_tries=
     return None, None
 
 
-def find_and_click(image, debug_name="", threshold=0.7, important=False, cnt_tries=5):
+def find_and_click(image, debug_name="", threshold=0.7, important=False, cnt_tries=5, loop=True):
     """Find the target image on screen using template matching and click it if found."""
     # Perform template matching
     print(f"{datetime.now()} {debug_name}")
-
+    ret_value=False
     click_x, click_y = find_image(image, debug_name, threshold, important, cnt_tries)
 
-    if click_x is not None:
+    while click_x is not None:
 
         # print(f"✅ Target found at ({click_x}, {click_y}), clicking...")
         pyautogui.click(click_x, click_y)
         print("    ✅ Success")
         time.sleep(0.2 * wait_time)
-        return True
-    else:
-        print("    ❌ Target not found.")
-        return False
+        click_x, click_y = find_image(image, debug_name, threshold, important, cnt_tries)
 
+        ret_value=True
+
+    if not ret_value:
+        print("    ❌ Target not found.")
+
+    return ret_value
 
 def click_anywhere():
     find_and_click((click_anywhere_img,), "   Anywhere", 0.7, False, 20)
