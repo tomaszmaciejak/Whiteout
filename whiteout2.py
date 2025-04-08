@@ -120,6 +120,7 @@ def find_and_click(image, debug_name="", threshold=0.7, important=False, cnt_tri
         #print(f"✅ Target found at ({click_x}, {click_y}), clicking...")
         pyautogui.click(click_x, click_y)
         print("    ✅ Success")
+
         time.sleep(0.2*wait_time)
         return True
     else:
